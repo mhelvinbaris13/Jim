@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+/* HIDDEN CONTENT */
+.hidden { display: none; }
+
+/* PASSWORD MODAL */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    background-image: url('BEA.JPG.jpg'); /* filename ng pic mo */
+    background-size: 50% auto;       /* sakto sa buong screen */
+    background-position: center;  /* gitna ng screen */
+    background-repeat: no-repeat; /* huwag ulitin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-content {
+    
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal input {
+    padding: 10px;
+    width: 200px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.modal button {
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* MAIN CONTENT */
+#mainContent {
+    height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Envelope & Letter */
+.container {
+    position: relative;
+}
+
+.envelope {
+    width: 300px;
+    height: 200px;
+    background: #ff4d6d;
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.letter {
+    width: 260px;
+    height: 160px;
+    background: white;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.5s;
+    text-align: center;
+}
+
+.envelope:hover .letter {
+    transform: translateY(-120px);
+}
+
+h1 { color: #ff4d6d; }
+
+.signature {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ff4d6d;
+}
+
+/* Floating Hearts */
+.hearts::before,
+.hearts::after {
+    content: "❤️ ❤️ ❤️ ❤️ ❤️";
+    position: absolute;
+    font-size: 20px;
+    animation: float 5s linear infinite;
+}
+
+.hearts::after {
+    top: 50%;
+    left: 20%;
+    animation-duration: 7s;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh); }
+    100% { transform: translateY(-10vh); }
+}
+
+/* Sparkles Animation */
+.sparkles::before,
+.sparkles::after {
+    content: "✨ ✨ ✨ ✨ ✨";
+    position: absolute;
+    font-size: 24px;
+    animation: sparkle 6s linear infinite;
+}
+
+.sparkles::after {
+    top: 60%;
+    left: 10%;
+    animation-duration: 8s;
+}
+
+@keyframes sparkle {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-10vh) rotate(360deg); }
+}
+
+/* Name Highlight */
+.name {
+    font-weight: bold;
+    color: #ff3366;
+    font-size: 1.2em;
+}

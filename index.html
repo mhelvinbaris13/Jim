@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Bea ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- PASSWORD MODAL -->
+<div id="passwordModal" class="modal">
+  <div class="modal-content">
+    <h2>Enter Password</h2>
+    <input type="password" id="passwordInput" placeholder="Type your password">
+    <button onclick="checkPassword()">Enter</button>
+    <p id="wrongMsg"></p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent" class="hidden">
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+      <source src="music.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="container">
+      <div class="envelope">
+          <div class="letter">
+              <h1>Happy Valentine's Day ❤️</h1>
+              <p>Dear <span class="name">Bea Bergonia Baris</span>,</p>
+              <p>You are the most beautiful part of my life. Thank you for loving me 💖</p>
+              <p class="signature">- Mhelvin 💘</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="hearts"></div>
+  <div class="sparkles"></div>
+
+</div>
+
+<script>
+  const password = "143"; // Change this to whatever password you want
+  function checkPassword() {
+    const input = document.getElementById("passwordInput").value;
+    if(input === password){
+      document.getElementById("passwordModal").style.display = "none";
+      document.getElementById("mainContent").classList.remove("hidden");
+    } else {
+      document.getElementById("wrongMsg").textContent = "Wrong password! Try again.";
+    }
+  }
+</script>
+
+</body>
+</html>
